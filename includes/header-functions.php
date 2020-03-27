@@ -7,7 +7,7 @@ namespace Coronavirus\Theme\Includes\Header_Functions;
 
 
 /**
- * Set default header images when custom images aren't set
+ * Set default header image IDs when custom images aren't set
  * on a post/page/term.  Ensures the 'media' header type is
  * always used.
  *
