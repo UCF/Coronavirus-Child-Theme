@@ -1,0 +1,5 @@
+.header-media {
+  @include media-breakpoint-down(xs) {
+    min-height: auto;
+  }
+}
