@@ -31,6 +31,24 @@ add_action( 'after_setup_theme', __NAMESPACE__ . '\init', 11 );
 
 
 /**
+ * Defines sections used in the WordPress Customizer.
+ *
+ * @since 1.0.0
+ * @author Jo Dickson
+ */
+function define_customizer_sections( $wp_customize ) {
+	$wp_customize->add_section(
+		CORONAVIRUS_THEME_CUSTOMIZER_PREFIX . 'headers',
+		array(
+			'title' => 'Headers'
+		)
+	);
+}
+
+add_action( 'customize_register', __NAMESPACE__ . '\define_customizer_sections' );
+
+
+/**
  * Defines settings and controls used in the WordPress Customizer.
  *
  * @since 1.0.0
@@ -51,7 +69,7 @@ function define_customizer_fields( $wp_customize ) {
 			'type'        => 'text',
 			'label'       => 'Header breadcrumb text',
 			'description' => 'Text to display above the page title on all subpages (excluding those using custom header markup). This text links back to the site homepage.',
-			'section'     => 'title_tagline'
+			'section'     => CORONAVIRUS_THEME_CUSTOMIZER_PREFIX . 'headers'
 		)
 	);
 }
