@@ -8,11 +8,14 @@ $title_elem       = ( $h1 === 'title' ) ? $h1_elem : 'span';
 $subtitle_elem    = ( $h1 === 'subtitle' ) ? $h1_elem : 'p';
 $title_classes    = 'cv-header-title mb-1 mb-sm-2';
 $subtitle_classes = 'cv-header-subtitle mb-2';
+$breadcrumb       = Coronavirus\Theme\Includes\Header_Functions\get_breadcrumb();
 ?>
 
 <?php if ( $title ): ?>
 <div class="header-content-inner align-self-center py-5 pb-sm-4 mt-sm-5">
 	<div class="container">
+		<?php echo $breadcrumb; ?>
+
 		<<?php echo $title_elem; ?> class="<?php echo $title_classes; ?>">
 			<?php echo $title; ?>
 		</<?php echo $title_elem; ?>>

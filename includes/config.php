@@ -28,3 +28,32 @@ function init() {
 }
 
 add_action( 'after_setup_theme', __NAMESPACE__ . '\init', 11 );
+
+
+/**
+ * Defines settings and controls used in the WordPress Customizer.
+ *
+ * @since 1.0.0
+ * @author Jo Dickson
+ */
+function define_customizer_fields( $wp_customize ) {
+	// Site Identity
+	$wp_customize->add_setting(
+		'header_breadcrumb_text',
+		array(
+			'default' => ''
+		)
+	);
+
+	$wp_customize->add_control(
+		'header_breadcrumb_text',
+		array(
+			'type'        => 'text',
+			'label'       => 'Header breadcrumb text',
+			'description' => 'Text to display above the page title on all subpages, which links back to the site homepage.',
+			'section'     => 'title_tagline'
+		)
+	);
+}
+
+add_action( 'customize_register', __NAMESPACE__ . '\define_customizer_fields' );

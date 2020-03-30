@@ -50,3 +50,32 @@ function get_header_content_type( $content_type, $obj ) {
 }
 
 add_filter( 'ucfwp_get_header_content_type', __NAMESPACE__ . '\get_header_content_type', 11, 2 );
+
+
+/**
+ * Returns markup for a breadcrumb back to the homepage, for use above
+ * page header title+subtitles.
+ *
+ * @since 1.0.0
+ * @author Jo Dickson
+ * @return string
+ */
+function get_breadcrumb() {
+	$retval = '';
+	if ( ! is_home() && ! is_front_page() ) {
+		$breadcrumb_text = trim( wptexturize( get_theme_mod( 'header_breadcrumb_text' ) ) );
+
+		if ( $breadcrumb_text ) {
+			ob_start();
+		?>
+			<div class="mb-2">
+				<a class="cv-header-breadcrumb" href="<?php echo get_home_url(); ?>">
+					<?php echo $breadcrumb_text; ?>
+				</a>
+			</div>
+		<?php
+			$retval = trim( ob_get_clean() );
+		}
+	}
+	return $retval;
+}

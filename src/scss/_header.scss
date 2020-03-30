@@ -16,6 +16,22 @@
   }
 }
 
+.cv-header-breadcrumb {
+  color: #444;
+  font-size: $font-size-xs;
+  font-weight: bold;
+  letter-spacing: .025em;
+  text-transform: uppercase;
+
+  @include hover-focus-active() {
+    color: #000;
+  }
+
+  @include media-breakpoint-up(md) {
+    font-size: $font-size-sm;
+  }
+}
+
 .cv-header-title {
   font-family: $font-family-sans-serif;
   font-size: $display4-size;
