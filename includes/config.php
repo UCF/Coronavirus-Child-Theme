@@ -50,7 +50,7 @@ function define_customizer_fields( $wp_customize ) {
 		array(
 			'type'        => 'text',
 			'label'       => 'Header breadcrumb text',
-			'description' => 'Text to display above the page title on all subpages, which links back to the site homepage.',
+			'description' => 'Text to display above the page title on all subpages (excluding those using custom header markup). This text links back to the site homepage.',
 			'section'     => 'title_tagline'
 		)
 	);
