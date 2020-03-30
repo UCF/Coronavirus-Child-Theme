@@ -8,8 +8,7 @@ namespace Coronavirus\Theme\Includes\Header_Functions;
 
 /**
  * Set default header image IDs when custom images aren't set
- * on a post/page/term.  Ensures the 'media' header type is
- * always used.
+ * on an object.  Ensures the 'media' header type is always used.
  *
  * @since 1.0.0
  * @author Jo Dickson
@@ -36,6 +35,12 @@ add_filter( 'ucfwp_get_header_images_after', __NAMESPACE__ . '\header_media_defa
  * for an object's header.  Prevents the UCF WP Theme's default
  * header_content template part from being utilized, and always
  * returns either the `title_subtitle` or `custom` template parts.
+ *
+ * @since 1.0.0
+ * @author Jo Dickson
+ * @param string $content_type The object's header_content type
+ * @param mixed $obj A queried object (e.g. WP_Post, WP_Term), or null
+ * @return string Modified header_content type name
  */
 function get_header_content_type( $content_type, $obj ) {
 	if ( $content_type !== 'custom' ) {
