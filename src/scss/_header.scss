@@ -3,3 +3,15 @@
     min-height: auto;
   }
 }
+
+.header-media-background {
+  &::before {
+    background: $header-media-bg-overlay;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+  }
+}

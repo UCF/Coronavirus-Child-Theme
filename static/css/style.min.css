@@ -1,1 +1,1 @@
-@media (max-width:575px){.header-media{min-height:auto}}
+@media (max-width:575px){.header-media{min-height:auto}}.header-media-background::before{background:rgba(255,255,255,.8);content:'';display:block;height:100%;position:absolute;width:100%;z-index:1}
