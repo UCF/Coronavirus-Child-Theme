@@ -8,7 +8,7 @@ namespace Coronavirus\Theme\Includes\Header_Functions;
 
 /**
  * Set default header image IDs when custom images aren't set
- * on an object.  Ensures the 'media' header type is always used.
+ * on an object.
  *
  * @since 1.0.0
  * @author Jo Dickson
@@ -21,13 +21,40 @@ function header_media_defaults( $header_imgs, $obj ) {
 		return $header_imgs;
 	}
 
-	$header_imgs['header_image'] = 'attachmentid'; // TODO retrieve from customizer value
-	$header_imgs['header_image_xs'] = 'attachmentid'; // TODO retrieve from customizer value
+	$default_sm = get_theme_mod( 'header_default_sm' );
+	$default_xs = get_theme_mod( 'header_default_xs' );
+
+	if ( $default_sm ) {
+		$header_imgs['header_image'] = $default_sm;
+	}
+
+	// Only set `header_image_xs` if the -sm+ image is available
+	// AND the -xs image is actually set:
+	if ( $default_sm && $default_xs ) {
+		$header_imgs['header_image_xs'] = $default_xs;
+	}
 
 	return $header_imgs;
 }
 
 add_filter( 'ucfwp_get_header_images_after', __NAMESPACE__ . '\header_media_defaults', 11, 2 );
+
+
+/**
+ * Forces headers in this theme to always use the `media`
+ * header template part.
+ *
+ * @since 1.0.0
+ * @author Jo Dickson
+ * @param string $header_type The object's header type
+ * @param mixed $obj A queried object (e.g. WP_Post, WP_Term), or null
+ * @return string Modified header type name
+ */
+function get_header_type( $header_type, $obj ) {
+	return 'media';
+}
+
+add_filter( 'ucfwp_get_header_type', __NAMESPACE__ . '\get_header_type', 11, 2 );
 
 
 /**

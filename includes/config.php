@@ -10,6 +10,7 @@ define( 'CORONAVIRUS_THEME_STATIC_URL', CORONAVIRUS_THEME_URL . '/static' );
 define( 'CORONAVIRUS_THEME_CSS_URL', CORONAVIRUS_THEME_STATIC_URL . '/css' );
 define( 'CORONAVIRUS_THEME_JS_URL', CORONAVIRUS_THEME_STATIC_URL . '/js' );
 define( 'CORONAVIRUS_THEME_IMG_URL', CORONAVIRUS_THEME_STATIC_URL . '/img' );
+define( 'CORONAVIRUS_THEME_CUSTOMIZER_PREFIX', 'ucfcoronavirus_' );
 
 
 /**
@@ -55,7 +56,7 @@ add_action( 'customize_register', __NAMESPACE__ . '\define_customizer_sections' 
  * @author Jo Dickson
  */
 function define_customizer_fields( $wp_customize ) {
-	// Site Identity
+	// Headers
 	$wp_customize->add_setting(
 		'header_breadcrumb_text',
 		array(
@@ -70,6 +71,46 @@ function define_customizer_fields( $wp_customize ) {
 			'label'       => 'Header breadcrumb text',
 			'description' => 'Text to display above the page title on all subpages (excluding those using custom header markup). This text links back to the site homepage.',
 			'section'     => CORONAVIRUS_THEME_CUSTOMIZER_PREFIX . 'headers'
+		)
+	);
+
+	$wp_customize->add_setting(
+		'header_default_sm',
+		array(
+			'default' => ''
+		)
+	);
+
+	$wp_customize->add_control(
+		new \WP_Customize_Media_Control(
+			$wp_customize,
+			'header_default_sm',
+			array(
+				'label'       => 'Default header image (sm+)',
+				'description' => 'Header image to use on pages that don\'t have a specific header image selected (for -sm breakpoint and up.)',
+				'section'     => CORONAVIRUS_THEME_CUSTOMIZER_PREFIX . 'headers',
+				'mime_type'   => 'image'
+			)
+		)
+	);
+
+	$wp_customize->add_setting(
+		'header_default_xs',
+		array(
+			'default' => ''
+		)
+	);
+
+	$wp_customize->add_control(
+		new \WP_Customize_Media_Control(
+			$wp_customize,
+			'header_default_xs',
+			array(
+				'label'       => 'Default header image (xs)',
+				'description' => 'Header image to use on pages that don\'t have a specific header image selected (for -xs breakpoint only.)',
+				'section'     => CORONAVIRUS_THEME_CUSTOMIZER_PREFIX . 'headers',
+				'mime_type'   => 'image'
+			)
 		)
 	);
 }
