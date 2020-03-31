@@ -20,6 +20,9 @@ define( 'CORONAVIRUS_THEME_CUSTOMIZER_PREFIX', 'ucfcoronavirus_' );
  * @author Jo Dickson
  */
 function init() {
+	// Custom menu location for this theme's homepage icon grid
+	register_nav_menu( 'home-icon-menu', __( 'Home Icon Menu' ) );
+
 	// Remove unused image sizes registered in UCF WP Theme
 	remove_image_size( 'bg-img' );
 	remove_image_size( 'bg-img-sm' );

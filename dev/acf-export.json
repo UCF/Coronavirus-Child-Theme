@@ -1,5 +1,161 @@
 [
     {
+        "key": "group_5e8358c8907db",
+        "title": "Home Icon Menu Item Fields",
+        "fields": [
+            {
+                "key": "field_5e836450403ed",
+                "label": "Type of Icon",
+                "name": "icon_type",
+                "type": "select",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "choices": {
+                    "fontawesome": "Font Awesome icon",
+                    "custom": "Custom icon"
+                },
+                "default_value": [
+                    "fontawesome"
+                ],
+                "allow_null": 0,
+                "multiple": 0,
+                "ui": 0,
+                "return_format": "value",
+                "ajax": 0,
+                "placeholder": ""
+            },
+            {
+                "key": "field_5e836400403ec",
+                "label": "Font Awesome Icon",
+                "name": "font_awesome_icon",
+                "type": "font-awesome",
+                "instructions": "Select a Font Awesome icon to display for this menu item on the homepage.",
+                "required": 1,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_5e836450403ed",
+                            "operator": "==",
+                            "value": "fontawesome"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "icon_sets": [
+                    "all"
+                ],
+                "custom_icon_set": "",
+                "default_label": "",
+                "default_value": "",
+                "save_format": "class",
+                "allow_null": 0,
+                "show_preview": 1,
+                "enqueue_fa": 0,
+                "fa_live_preview": "",
+                "choices": []
+            },
+            {
+                "key": "field_5e8358e933735",
+                "label": "Icon",
+                "name": "icon",
+                "type": "image",
+                "instructions": "Upload a custom icon to display for this menu item on the homepage.  Image format: SVG or transparent PNG",
+                "required": 1,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_5e836450403ed",
+                            "operator": "==",
+                            "value": "custom"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "100",
+                    "class": "",
+                    "id": ""
+                },
+                "return_format": "array",
+                "preview_size": "thumbnail",
+                "library": "all",
+                "min_width": "",
+                "min_height": "",
+                "min_size": "",
+                "max_width": 600,
+                "max_height": 600,
+                "max_size": "",
+                "mime_types": "svg,png"
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "nav_menu_item",
+                    "operator": "==",
+                    "value": "location\/home-icon-menu"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": ""
+    },
+    {
+        "key": "group_5e835bd2476e7",
+        "title": "Home Icon Menu Notes",
+        "fields": [
+            {
+                "key": "field_5e835bd7aed66",
+                "label": "",
+                "name": "",
+                "type": "message",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "message": "<div class=\"notice notice-info inline\"><p><strong>Please note:<\/strong> The Home Icon Menu location does not support nested menu items.  Any nested menu items added to this menu will not be displayed on the homepage.<\/p><\/div>",
+                "new_lines": "wpautop",
+                "esc_html": 0
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "nav_menu",
+                    "operator": "==",
+                    "value": "location\/home-icon-menu"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "seamless",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": ""
+    },
+    {
         "key": "group_58f7a73f5fecc",
         "title": "Page Header Fields",
         "fields": [
