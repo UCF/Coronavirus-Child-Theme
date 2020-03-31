@@ -26,11 +26,13 @@ function home_icon_nav_menu_objects( $items, $args ) {
 
 			switch ( $icon_type ) {
 				case 'custom':
-					$icon_markup .= 'TODO';
+					$icon_img = get_field( 'icon', $item );
+					$icon_markup .= '<img class="quicklink-icon-img" src="' . $icon_img['url'] . '">';
 					break;
 				case 'fontawesome':
 				default:
-					$icon_markup .= 'TODO';
+					$icon_class = get_field( 'font_awesome_icon', $item );
+					$icon_markup .= '<span class="quicklink-icon-fa fa ' . $icon_class . '"></span>';
 					break;
 			}
 
