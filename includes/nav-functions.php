@@ -66,8 +66,9 @@ add_filter( 'wp_nav_menu_objects', __NAMESPACE__ . '\home_icon_nav_menu_objects'
  */
 function home_icon_nav_menu_css_class( $classes, $item, $args, $depth ) {
 	if ( $args->theme_location === 'home-icon-menu' ) {
-		return array( 'quicklinks-item' );
+		$classes = array( 'quicklinks-item' );
 	}
+	return $classes;
 }
 
 add_filter( 'nav_menu_css_class', __NAMESPACE__ . '\home_icon_nav_menu_css_class', 10, 4 );
