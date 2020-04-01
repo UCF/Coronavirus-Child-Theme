@@ -1,0 +1,23 @@
+.archive-post-link {
+  color: inherit;
+  display: block;
+  max-width: 100%;
+
+  @include hover-focus-active {
+    color: inherit;
+    text-decoration: none;
+
+    .archive-post-title {
+      text-decoration: underline;
+    }
+  }
+}
+
+.archive-post-title {
+  font-size: 1.4em;
+}
+
+.archive-post-date {
+  color: $brand-default-aw;
+  font-size: .85rem;
+}
