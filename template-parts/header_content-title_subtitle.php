@@ -28,7 +28,7 @@ $breadcrumb       = Includes\Header_Functions\get_breadcrumb();
 			</<?php echo $subtitle_elem; ?>>
 		<?php endif; ?>
 
-		<?php if ( is_home() || is_front_page() ): ?>
+		<?php if ( is_front_page() ): ?>
 			<?php echo Includes\Nav_Functions\display_home_icon_nav(); ?>
 		<?php endif; ?>
 	</div>
