@@ -89,7 +89,7 @@ add_filter( 'ucfwp_get_header_content_type', __NAMESPACE__ . '\get_header_conten
  */
 function get_breadcrumb() {
 	$retval = '';
-	if ( ! is_home() && ! is_front_page() ) {
+	if ( ! is_front_page() ) {
 		$breadcrumb_text = trim( wptexturize( get_theme_mod( 'header_breadcrumb_text' ) ) );
 
 		if ( $breadcrumb_text ) {
