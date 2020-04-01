@@ -1,4 +1,6 @@
 <?php
+use Coronavirus\Theme\Includes as Includes;
+
 $obj              = ucfwp_get_queried_object();
 $title            = ucfwp_get_header_title( $obj );
 $subtitle         = ucfwp_get_header_subtitle( $obj );
@@ -8,7 +10,7 @@ $title_elem       = ( $h1 === 'title' ) ? $h1_elem : 'span';
 $subtitle_elem    = ( $h1 === 'subtitle' ) ? $h1_elem : 'p';
 $title_classes    = 'cv-header-title mb-1 mb-sm-2';
 $subtitle_classes = 'cv-header-subtitle mb-2';
-$breadcrumb       = Coronavirus\Theme\Includes\Header_Functions\get_breadcrumb();
+$breadcrumb       = Includes\Header_Functions\get_breadcrumb();
 ?>
 
 <?php if ( $title ): ?>
@@ -24,6 +26,10 @@ $breadcrumb       = Coronavirus\Theme\Includes\Header_Functions\get_breadcrumb()
 			<<?php echo $subtitle_elem; ?> class="<?php echo $subtitle_classes; ?>">
 				<?php echo $subtitle; ?>
 			</<?php echo $subtitle_elem; ?>>
+		<?php endif; ?>
+
+		<?php if ( is_front_page() ): ?>
+			<?php echo Includes\Nav_Functions\display_home_icon_nav(); ?>
 		<?php endif; ?>
 	</div>
 </div>
