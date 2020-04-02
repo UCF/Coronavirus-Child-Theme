@@ -29,6 +29,9 @@ function init() {
 	remove_image_size( 'bg-img-md' );
 	remove_image_size( 'bg-img-lg' );
 	remove_image_size( 'bg-img-xl' );
+
+	// Enable breadcrumbs (requires Yoast SEO)
+	add_theme_support( 'yoast-seo-breadcrumbs' );
 }
 
 add_action( 'after_setup_theme', __NAMESPACE__ . '\init', 11 );
