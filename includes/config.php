@@ -122,3 +122,13 @@ function define_customizer_fields( $wp_customize ) {
 }
 
 add_action( 'customize_register', __NAMESPACE__ . '\define_customizer_fields' );
+
+
+/**
+ * Force-disable FAQ archives in favor of controlling
+ * FAQ lists manually via pages on this site.
+ *
+ * @since 1.0.0
+ * @author Jo Dickson
+ */
+add_filter( 'option_ucf_faq_disable_faq_archive', '__return_true' );
