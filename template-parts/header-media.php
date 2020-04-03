@@ -16,7 +16,7 @@ $header_content_type = ucfwp_get_header_content_type( $obj );
 				echo ucfwp_get_media_background_video( $videos, $video_loop );
 			}
 			if ( $images ) {
-				$bg_image_srcs = ucfwp_get_header_media_picture_srcs( $header_height, $images );
+				$bg_image_srcs = ucfwp_get_header_media_picture_srcs( null, $images );
 				echo ucfwp_get_media_background_picture( $bg_image_srcs );
 			}
 			?>
