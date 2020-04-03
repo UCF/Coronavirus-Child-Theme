@@ -23,6 +23,9 @@ function init() {
 	// Custom menu location for this theme's homepage icon grid
 	register_nav_menu( 'home-icon-menu', __( 'Home Icon Menu' ) );
 
+	// Remove unused header menu registered in UCF WP Theme
+	unregister_nav_menu( 'header-menu' );
+
 	// Remove unused image sizes registered in UCF WP Theme
 	remove_image_size( 'bg-img' );
 	remove_image_size( 'bg-img-sm' );
