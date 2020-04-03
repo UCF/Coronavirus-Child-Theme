@@ -17,8 +17,8 @@ $breadcrumb = Header_Functions\get_breadcrumb();
 		<?php echo $breadcrumb; ?>
 	</div>
 </div>
-<div class="container">
-	<<?php echo $h1_elem; ?>>
+<div class="container pt-2 pt-sm-0">
+	<<?php echo $h1_elem; ?> class="cv-header-condensed-title">
 		<?php echo $title; ?>
 	</<?php echo $h1_elem; ?>>
 </div>

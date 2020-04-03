@@ -53,6 +53,15 @@
   }
 }
 
+.cv-header-condensed-title {
+  font-size: 1.85rem;
+  margin-bottom: 0;
+
+  @include media-breakpoint-up(md) {
+    font-size: $font-size-h1-md;
+  }
+}
+
 .cv-header-subtitle {
   font-size: $lead-font-size;
   line-height: 1.2;
