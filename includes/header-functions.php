@@ -108,11 +108,13 @@ function get_breadcrumb() {
 		if ( $breadcrumb_text ) {
 			ob_start();
 		?>
-			<div class="mb-2">
-				<a class="cv-header-breadcrumb" href="<?php echo get_home_url(); ?>">
-					<?php echo $breadcrumb_text; ?>
-				</a>
-			</div>
+			<nav aria-label="Home breadcrumb">
+				<div class="mb-2">
+					<a class="cv-header-breadcrumb" href="<?php echo get_home_url(); ?>">
+						<?php echo $breadcrumb_text; ?>
+					</a>
+				</div>
+			</nav>
 		<?php
 			$retval = trim( ob_get_clean() );
 		}
