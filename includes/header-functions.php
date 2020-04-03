@@ -42,7 +42,8 @@ add_filter( 'ucfwp_get_header_images_after', __NAMESPACE__ . '\header_media_defa
 
 /**
  * Forces headers in this theme to always use the `media`
- * header template part.
+ * header template part, except for single Posts and FAQs,
+ * which use the `condensed` header template part.
  *
  * @since 1.0.0
  * @author Jo Dickson
@@ -51,17 +52,29 @@ add_filter( 'ucfwp_get_header_images_after', __NAMESPACE__ . '\header_media_defa
  * @return string Modified header type name
  */
 function get_header_type( $header_type, $obj ) {
-	return 'media';
+	$header_type = 'media';
+
+	if (
+		( $obj instanceof \WP_Post )
+		&& in_array( $obj->post_type, array( 'post', 'faq' ) )
+	) {
+		$header_type = 'condensed';
+	}
+
+	return $header_type;
 }
 
 add_filter( 'ucfwp_get_header_type', __NAMESPACE__ . '\get_header_type', 11, 2 );
 
 
 /**
- * Simplifies the logic behind what content_type is returned
+ * Modifies the logic behind what content_type is returned
  * for an object's header.  Prevents the UCF WP Theme's default
  * header_content template part from being utilized, and always
  * returns either the `title_subtitle` or `custom` template parts.
+ *
+ * NOTE: only the `media` header template part utilizes header_content
+ * template parts; the `condensed` header bypasses all of this.
  *
  * @since 1.0.0
  * @author Jo Dickson
@@ -95,11 +108,13 @@ function get_breadcrumb() {
 		if ( $breadcrumb_text ) {
 			ob_start();
 		?>
-			<div class="mb-2">
-				<a class="cv-header-breadcrumb" href="<?php echo get_home_url(); ?>">
-					<?php echo $breadcrumb_text; ?>
-				</a>
-			</div>
+			<nav aria-label="Home breadcrumb">
+				<div class="mb-2">
+					<a class="cv-header-breadcrumb" href="<?php echo get_home_url(); ?>">
+						<?php echo $breadcrumb_text; ?>
+					</a>
+				</div>
+			</nav>
 		<?php
 			$retval = trim( ob_get_clean() );
 		}
