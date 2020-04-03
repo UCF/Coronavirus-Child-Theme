@@ -724,13 +724,6 @@
             ],
             [
                 {
-                    "param": "post_type",
-                    "operator": "==",
-                    "value": "post"
-                }
-            ],
-            [
-                {
                     "param": "taxonomy",
                     "operator": "==",
                     "value": "all"
