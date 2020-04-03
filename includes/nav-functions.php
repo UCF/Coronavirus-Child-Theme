@@ -6,6 +6,20 @@ namespace Coronavirus\Theme\Includes\Nav_Functions;
 
 
 /**
+ * Replaces the UCF WP Theme's nav markup with an empty string
+ * (effectively disabling the site nav in the header).
+ *
+ * Shouldn't really be in use anywhere since this theme overrides
+ * the `header-media` template part and enforces it everywhere,
+ * but added for good measure anyway.
+ *
+ * @since 1.0.0
+ * @author Jo Dickson
+ */
+add_filter( 'ucfwp_get_nav_markup', '__return_empty_string' );
+
+
+/**
  * Modifies standard wp_nav_menu() output to display
  * Home Icon Menu icons.
  *
