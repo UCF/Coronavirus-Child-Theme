@@ -55,8 +55,8 @@ function get_header_type( $header_type, $obj ) {
 	$header_type = 'media';
 
 	if (
-		( $obj instanceof \WP_Post )
-		&& in_array( $obj->post_type, array( 'post', 'faq' ) )
+		( ! $obj && ! is_home() )
+		|| ( $obj instanceof \WP_Post && in_array( $obj->post_type, array( 'post', 'faq' ) ) )
 	) {
 		$header_type = 'condensed';
 	}
@@ -109,11 +109,9 @@ function get_breadcrumb() {
 			ob_start();
 		?>
 			<nav aria-label="Home breadcrumb">
-				<div class="mb-2">
-					<a class="cv-header-breadcrumb" href="<?php echo get_home_url(); ?>">
-						<?php echo $breadcrumb_text; ?>
-					</a>
-				</div>
+				<a class="cv-header-breadcrumb" href="<?php echo get_home_url(); ?>">
+					<?php echo $breadcrumb_text; ?>
+				</a>
 			</nav>
 		<?php
 			$retval = trim( ob_get_clean() );

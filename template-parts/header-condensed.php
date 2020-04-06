@@ -13,7 +13,7 @@ $breadcrumb = Header_Functions\get_breadcrumb();
 ?>
 
 <div class="navbar navbar-light bg-faded mb-4 mb-sm-5">
-	<div class="container px-0 px-sm-3 pt-3 pb-2">
+	<div class="container px-0 px-sm-3 py-3">
 		<?php echo $breadcrumb; ?>
 	</div>
 </div>

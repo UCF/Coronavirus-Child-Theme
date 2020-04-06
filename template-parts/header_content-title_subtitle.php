@@ -8,7 +8,7 @@ $h1               = ucfwp_get_header_h1_option( $obj );
 $h1_elem          = ucfwp_get_header_h1_elem( $obj );
 $title_elem       = ( $h1 === 'title' ) ? $h1_elem : 'span';
 $subtitle_elem    = ( $h1 === 'subtitle' ) ? $h1_elem : 'p';
-$title_classes    = 'cv-header-title mb-1 mb-sm-2';
+$title_classes    = 'cv-header-title mb-1 mb-sm-2 mt-3 mt-sm-4';
 $subtitle_classes = 'cv-header-subtitle mb-2';
 $breadcrumb       = Includes\Header_Functions\get_breadcrumb();
 ?>
