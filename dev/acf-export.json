@@ -118,7 +118,25 @@
     {
         "key": "group_5e835bd2476e7",
         "title": "Home Icon Menu Notes",
-        "fields": [],
+        "fields": [
+            {
+                "key": "field_5e835bd7aed66",
+                "label": "",
+                "name": "",
+                "type": "message",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "message": "<div class=\"notice notice-info inline\"><p><strong>Please note:<\/strong> The Home Icon Menu location does not support nested menu items.  Any nested menu items added to this menu will not be displayed on the homepage.<\/p><\/div>",
+                "new_lines": "wpautop",
+                "esc_html": 0
+            }
+        ],
         "location": [
             [
                 {
@@ -706,13 +724,6 @@
             ],
             [
                 {
-                    "param": "post_type",
-                    "operator": "==",
-                    "value": "post"
-                }
-            ],
-            [
-                {
                     "param": "taxonomy",
                     "operator": "==",
                     "value": "all"
@@ -727,7 +738,7 @@
         "hide_on_screen": "",
         "active": true,
         "description": ""
-    },
+    }
     {
         "key": "group_5e8777494f9e9",
         "title": "Post Fields",
