@@ -15,4 +15,4 @@ function update_excerpt( $excerpt, $post ) {
 	return $excerpt;
 }
 
-add_filter( 'the_excerpt', __NAMESPACE__ . '\update_excerpt', 10, 2 );
+add_filter( 'get_the_excerpt', __NAMESPACE__ . '\update_excerpt', 10, 2 );
