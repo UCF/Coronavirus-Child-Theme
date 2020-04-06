@@ -738,5 +738,47 @@
         "hide_on_screen": "",
         "active": true,
         "description": ""
+    },
+    {
+        "key": "group_5e8777494f9e9",
+        "title": "Post Fields",
+        "fields": [
+            {
+                "key": "field_5e87774dce0c5",
+                "label": "Deck",
+                "name": "post_deck",
+                "type": "wysiwyg",
+                "instructions": "Appears below the title on a single post.  Is also used as excerpt text within lists of posts.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "tabs": "all",
+                "toolbar": "basic",
+                "media_upload": 0,
+                "delay": 0
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "post"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": ""
     }
 ]
