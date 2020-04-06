@@ -55,8 +55,8 @@ function get_header_type( $header_type, $obj ) {
 	$header_type = 'media';
 
 	if (
-		( $obj instanceof \WP_Post )
-		&& in_array( $obj->post_type, array( 'post', 'faq' ) )
+		( ! $obj && ! is_home() )
+		|| ( $obj instanceof \WP_Post && in_array( $obj->post_type, array( 'post', 'faq' ) ) )
 	) {
 		$header_type = 'condensed';
 	}
