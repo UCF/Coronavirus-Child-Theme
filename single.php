@@ -11,7 +11,7 @@ $deck = get_field( 'post_deck' );
 <article class="<?php echo $post->post_status; ?> post-list-item">
 	<div class="container mt-4 mt-sm-5 mb-5 pb-sm-4">
 		<?php if ( ! empty( $deck ) ) : ?>
-		<div class="lead mb-3">
+		<div class="lead mb-4">
 			<?php echo $deck; ?>
 		</div>
 		<?php endif; ?>
