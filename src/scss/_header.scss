@@ -2,6 +2,16 @@
   @include media-breakpoint-down(xs) {
     min-height: auto;
   }
+
+  .cv-header-breadcrumb {
+    border: 2px solid $brand-primary;
+    padding: .25em .75em;
+
+    @include hover-focus-active() {
+      background-color: $brand-primary;
+      text-decoration: none;
+    }
+  }
 }
 
 .header-media-background {
