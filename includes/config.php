@@ -154,3 +154,22 @@ add_filter( 'option_ucf_faq_include_athena_classes', '__return_true' );
  * @author Jo Dickson
  */
 add_filter( 'option_ucf_faq_disable_faq_archive', '__return_true' );
+
+
+/**
+ * Force new FAQs to have a very high default sort order, pushing
+ * them to the bottom of sorted FAQ lists.
+ *
+ * @since 1.0.0
+ * @author Jo Dickson
+ */
+add_filter( 'option_ucf_faq_default_sort_order', '__return_true' );
+
+
+/**
+ * Force the ACF Font Awesome plugin to use v4 icons.
+ *
+ * @since 1.0.0
+ * @author Jo Dickson
+ */
+add_filter( 'ACFFA_override_major_version', 4 );
