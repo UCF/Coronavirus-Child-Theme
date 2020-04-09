@@ -20,5 +20,7 @@
 // Project-specific styles and overrides
 //
 
-// Add/import your theme's custom styles here
-// ...
+@import 'header';
+@import 'nav';
+
+@import 'post-archive';
