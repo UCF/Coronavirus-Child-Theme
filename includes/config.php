@@ -172,4 +172,8 @@ add_filter( 'option_ucf_faq_default_sort_order', '__return_true' );
  * @since 1.0.0
  * @author Jo Dickson
  */
-add_filter( 'ACFFA_override_major_version', 4 );
+function fontawesome_version() {
+	return 4;
+}
+
+add_filter( 'ACFFA_override_major_version', __NAMESPACE__ . '\fontawesome_version' );
