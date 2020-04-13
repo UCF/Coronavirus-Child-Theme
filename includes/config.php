@@ -177,3 +177,35 @@ function fontawesome_version() {
 }
 
 add_filter( 'ACFFA_override_major_version', __NAMESPACE__ . '\fontawesome_version' );
+
+
+/**
+ * Modifies the dimensions for WordPress's default image sizes.
+ *
+ * @since 1.0.1
+ * @author Jo Dickson
+ */
+add_filter( 'pre_option_large_size_w', function( $value ) {
+	return 1200;
+} );
+
+add_filter( 'pre_option_large_size_h', function( $value ) {
+	return 800;
+} );
+
+add_filter( 'pre_option_medium_large_size_h', function( $value ) {
+	return 512;
+} );
+
+
+/**
+ * Modifies the default number of posts shown on the blogroll page.
+ *
+ * @since 1.0.1
+ * @author Jo Dickson
+ */
+function blogroll_posts_per_page() {
+	return 24;
+}
+
+add_filter( 'pre_option_posts_per_page', __NAMESPACE__ . '\blogroll_posts_per_page' );
