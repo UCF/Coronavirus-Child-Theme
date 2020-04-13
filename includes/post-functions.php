@@ -55,7 +55,7 @@ function get_feature_thumbnail( $post ) {
 	// for the given post
 	if ( ! $thumbnail ) {
 		// TODO
-		$thumbnail = '<img class="' . $thumbnail_class . '" src="' . CORONAVIRUS_THEME_IMG_URL . '/default-thumb.jpg" alt="">';
+		$thumbnail = '<img class="' . $thumbnail_class . '" src="' . CORONAVIRUS_THEME_IMG_URL . '/default-thumb.png" alt="">';
 	}
 
 	return $thumbnail;
