@@ -9,7 +9,7 @@ use Coronavirus\Theme\Includes\Post_Functions as Post_Functions;
 <?php if ( have_posts() ): ?>
 	<div class="row">
 		<?php while ( have_posts() ) : the_post(); ?>
-		<div class="col-md-6 col-lg-4">
+		<div class="col-md-6 col-lg-4 mb-4">
 			<?php echo Post_Functions\display_feature_vertical( $post ); ?>
 		</div>
 		<?php endwhile; ?>
