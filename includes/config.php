@@ -208,4 +208,4 @@ function blogroll_posts_per_page() {
 	return 24;
 }
 
-add_filter( 'pre_option_posts_per_page', __NAMESPACE__ . '\blogroll_posts_per_page' );
+// add_filter( 'pre_option_posts_per_page', __NAMESPACE__ . '\blogroll_posts_per_page' );
