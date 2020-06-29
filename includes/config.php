@@ -180,10 +180,10 @@ add_filter( 'ACFFA_override_major_version', __NAMESPACE__ . '\fontawesome_versio
 
 
 /**
- * Kill attachment pages, author pages, daily archive pages, and search.
- * Overriding the parent theme to add back in feeds.
+ * Overriding the parent theme function to add in feeds.
  *
- * http://betterwp.net/wordpress-tips/disable-some-wordpress-pages/
+ * @since 1.0.1
+ * @author RJ Bruneel
  **/
 function ucfwp_kill_unused_templates() {
 	global $wp_query, $post;
@@ -193,9 +193,9 @@ function ucfwp_kill_unused_templates() {
 		exit();
 	}
 }
-add_action( 'template_redirect', 'ucfwp_kill_unused_templates' );
+add_action( 'template_redirect', __NAMESPACE__ . '\ucfwp_kill_unused_templates' );
 
 function enable_unused_templates() {
     remove_filter( 'template_redirect', 'ucfwp_kill_unused_templates' );
 }
-add_action( 'after_setup_theme', 'enable_unused_templates' );
+add_action( 'after_setup_theme', __NAMESPACE__ . '\enable_unused_templates' );
