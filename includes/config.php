@@ -185,7 +185,7 @@ add_filter( 'ACFFA_override_major_version', __NAMESPACE__ . '\fontawesome_versio
  * @since 1.0.1
  * @author RJ Bruneel
  **/
-function ucfwp_kill_unused_templates() {
+function kill_unused_templates() {
 	global $wp_query, $post;
 
 	if ( is_author() || is_attachment() || is_date() || is_search() || is_comment_feed() ) {
@@ -193,7 +193,7 @@ function ucfwp_kill_unused_templates() {
 		exit();
 	}
 }
-add_action( 'template_redirect', __NAMESPACE__ . '\ucfwp_kill_unused_templates' );
+add_action( 'template_redirect', __NAMESPACE__ . '\kill_unused_templates' );
 
 function enable_unused_templates() {
     remove_filter( 'template_redirect', 'ucfwp_kill_unused_templates' );
