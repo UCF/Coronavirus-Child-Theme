@@ -177,3 +177,25 @@ function fontawesome_version() {
 }
 
 add_filter( 'ACFFA_override_major_version', __NAMESPACE__ . '\fontawesome_version' );
+
+
+/**
+ * Overriding the parent theme function to add in feeds.
+ *
+ * @since 1.0.1
+ * @author RJ Bruneel
+ **/
+function ucfwp_kill_unused_templates() {
+	global $wp_query, $post;
+
+	if ( is_author() || is_attachment() || is_date() || is_search() || is_comment_feed() ) {
+		wp_redirect( home_url() );
+		exit();
+	}
+}
+add_action( 'template_redirect', __NAMESPACE__ . '\ucfwp_kill_unused_templates' );
+
+function enable_unused_templates() {
+    remove_filter( 'template_redirect', 'ucfwp_kill_unused_templates' );
+}
+add_action( 'after_setup_theme', __NAMESPACE__ . '\enable_unused_templates' );
