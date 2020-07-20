@@ -7,7 +7,7 @@ namespace Coronavirus\Theme\Includes\Post_Functions;
 
 function update_excerpt( $excerpt, $post ) {
 	if ( $post && $post->post_type === 'post' ) {
-		$deck = get_field( 'post_deck' );
+		$deck = get_field( 'post_deck', $post );
 
 		$excerpt = ! empty( $deck ) ? $deck : $excerpt;
 	}
