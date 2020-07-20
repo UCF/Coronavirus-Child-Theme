@@ -42,7 +42,7 @@ function home_icon_nav_menu_objects( $items, $args ) {
 				case 'custom':
 					$icon_img = get_field( 'icon', $item );
 					if ( $icon_img ) {
-						$icon_markup .= '<img class="quicklink-icon-img" src="' . $icon_img['url'] . '">';
+						$icon_markup .= '<img class="quicklink-icon-img" src="' . $icon_img['url'] . '" alt="">';
 					}
 					break;
 				case 'fontawesome':
