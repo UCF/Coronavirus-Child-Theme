@@ -6,26 +6,19 @@
 	get_header();
 	the_post();
 
+	$message = "";
+
+	if( isset ( $_GET['audience'] ) && have_rows( 'confirmations', $post ) ) :
+		$confirmations = get_field( 'confirmations', $post );
+		$message_key = array_search( $_GET['audience'], array_column( $confirmations, 'confirmation_parameter' ) );
+		$message = $confirmations[$message_key]['confirmation_message'];
+	endif;
 ?>
+
 <div class="container">
 	<div class="row my-5">
 		<div class="col-lg-8 offset-lg-2">
-<?php
-
-	the_content();
-
-	if( have_rows( 'confirmations', $post ) ):
-
-		while( have_rows( 'confirmations', $post ) ) : the_row();
-
-			if( isset( $_GET[ get_sub_field( 'confirmation_parameter', $post ) ] ) ) {
-				echo get_sub_field( 'confirmation_message', $post );
-			}
-
-		endwhile;
-
-	endif;
-?>
+			<?php echo $message; ?>
 		</div>
 	</div>
 </div>
