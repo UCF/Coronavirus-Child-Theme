@@ -11,7 +11,7 @@
 	if( isset ( $_GET['audience'] ) && have_rows( 'confirmations', $post ) ) :
 		$confirmations = get_field( 'confirmations', $post );
 		$message_key = array_search( $_GET['audience'], array_column( $confirmations, 'confirmation_parameter' ) );
-		$message = $confirmations[$message_key]['confirmation_message'];
+		$message = ( $message_key === FALSE || $message_key === "" ) ? "" : $confirmations[$message_key]['confirmation_message'];
 	endif;
 ?>
 
