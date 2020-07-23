@@ -1,5 +1,87 @@
 [
     {
+        "key": "group_5f18a4b80929a",
+        "title": "Confirmation Fields",
+        "fields": [
+            {
+                "key": "field_5f18a512b4bb8",
+                "label": "Confirmation Messages",
+                "name": "confirmations",
+                "type": "repeater",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "collapsed": "",
+                "min": 0,
+                "max": 0,
+                "layout": "block",
+                "button_label": "",
+                "sub_fields": [
+                    {
+                        "key": "field_5f18a533b4bb9",
+                        "label": "Confirmation Parameter",
+                        "name": "confirmation_parameter",
+                        "type": "text",
+                        "instructions": "Unique parameter used to determine which confirmation page message to display. i.e. en-employee, conf-es-employee, en-on-campus-student, es-off-campus-student",
+                        "required": 1,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": "",
+                        "maxlength": 30
+                    },
+                    {
+                        "key": "field_5f18a5f1b4bba",
+                        "label": "Confirmation Message",
+                        "name": "confirmation_message",
+                        "type": "wysiwyg",
+                        "instructions": "Confirmation message to be displayed for the confirmation parameter specified above.",
+                        "required": 1,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "tabs": "all",
+                        "toolbar": "full",
+                        "media_upload": 1,
+                        "delay": 0
+                    }
+                ]
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_template",
+                    "operator": "==",
+                    "value": "confirmation-template.php"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": ""
+    },
+    {
         "key": "group_5e8358c8907db",
         "title": "Home Icon Menu Item Fields",
         "fields": [
