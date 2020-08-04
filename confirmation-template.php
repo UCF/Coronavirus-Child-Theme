@@ -15,12 +15,6 @@
 	endif;
 ?>
 
-<div class="container">
-	<div class="row my-4 my-lg-5">
-		<div class="col-lg-8 offset-lg-2">
-			<?php echo $message; ?>
-		</div>
-	</div>
-</div>
+<?php echo $message; ?>
 
 <?php get_footer(); ?>
