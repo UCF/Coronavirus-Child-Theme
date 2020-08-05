@@ -33,7 +33,7 @@ $related_posts = UCF_FAQ_Common::get_related_faqs_by_tag( $tags, array( $post->I
 
 <div class="container">
 	<div class="row">
-		<article class="col-xl-8 col-lg-7 mb-4">
+		<article class="col-xl-8 col-lg-7 my-4">
 			<?php echo apply_filters( 'the_content', $post->post_content ); ?>
 			<?php if ( $related_posts ) : ?>
 				<div class="ucf-faq-related-questions<?php UCF_FAQ_Config::add_athena_attr( $related_classes ); ?>">
