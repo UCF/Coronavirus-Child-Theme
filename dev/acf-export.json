@@ -27,7 +27,7 @@
                         "label": "Confirmation Parameter",
                         "name": "confirmation_parameter",
                         "type": "text",
-                        "instructions": "Unique parameter used to determine which confirmation page message to display. i.e. en-employee, conf-es-employee, en-on-campus-student, es-off-campus-student",
+                        "instructions": "A unique parameter used to determine the confirmation page message to display. i.e. employee-clear, employee-clear-es, student-on-campus-clear, student-off-campus-clear.",
                         "required": 1,
                         "conditional_logic": 0,
                         "wrapper": {
@@ -39,7 +39,7 @@
                         "placeholder": "",
                         "prepend": "",
                         "append": "",
-                        "maxlength": 30
+                        "maxlength": 100
                     },
                     {
                         "key": "field_5f18a5f1b4bba",
