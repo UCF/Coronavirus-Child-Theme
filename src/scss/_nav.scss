@@ -38,10 +38,10 @@
   a {
     color: inherit;
     display: inline-block;
+    text-decoration: none;
 
     @include hover-focus-active() {
       color: inherit;
-      text-decoration: none;
 
       .quicklink-icon {
         background-color: darken($brand-primary, 6%);

@@ -1,11 +1,12 @@
 .archive-post-link {
+  @include unset-link-underline();
   color: inherit;
   display: block;
   max-width: 100%;
+  text-decoration: none;
 
   @include hover-focus-active {
     color: inherit;
-    text-decoration: none;
 
     .archive-post-title {
       text-decoration: underline;
