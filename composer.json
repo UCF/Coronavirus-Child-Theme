@@ -1,0 +1,8 @@
+{
+    "name": "ucf/coronavirus-child-theme",
+    "description": "WordPress child theme for UCF's coronavirus information website.",
+    "type": "wordpress-theme",
+    "require": {
+        "composer/installers": "~1.0"
+    }
+}
